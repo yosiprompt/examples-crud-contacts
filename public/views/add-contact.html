@@ -1,0 +1,25 @@
+<div>
+	<h2>Please enter the contact data</h2>
+	<form name="addContact" ng-submit="saveContact()" novalidate>
+		<div class="form-group" ng-class="{ 'has-error' : addContact.name.$invalid && !addContact.name.$pristine }">
+			<label for="name" class="control-label">Name: </label>
+			<input type="text" ng-model="person.name" name="name" class="form-control" placeholder="Enter contact's name here" required>
+			<p ng-show="addContact.name.$invalid && !addContact.name.$pristine" class="help-block">Contact's name is required.</p>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error' : addContact.phone.$invalid && !addContact.phone.$pristine }">
+			<label for="phone" class="control-label">Phone: </label>
+			<input type="tel" ng-model="person.phone" name="phone" class="form-control" placeholder="Enter contact's phone here" required>
+			<p ng-show="addContact.phone.$invalid && !addContact.name.$pristine" class="help-block">Contact's phone is required.</p>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error': addContact.email.$invalid && !addContact.email.$pristine }">
+			<label for="email" class="control-label">Email: </label>
+			<input type="email" ng-model="person.email" name="email" class="form-control" placeholder="Enter contact's email here" required>
+			<p ng-show="addContact.email.$invalid && !addContact.email.$pristine" class="help-block">Enter a valid email.</p>
+		</div>
+		<div class="form-group">
+			<label for="address" class="control-label">Address: </label>
+			<textarea type="text" ng-model="person.address" name="address" class="form-control" placeholder="Enter contact's address here" rows="3"></textarea>
+		</div>
+		<button class="btn btn-primary" type="submit" ng-disabled="addContact.$invalid">Save Contact Information</button>
+	</form>
+</div>

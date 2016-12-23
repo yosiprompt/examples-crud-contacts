@@ -1,0 +1,25 @@
+<div class="table-responsive">
+	<table class="table-inverse table table-striped table-bordered table-hover">
+		<thead class="thead-default">
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Address</th>
+			<th>Email</th>
+			<th>Edit / Delete</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in persons">
+				<td scope="row"><a href="#/contact/{{ person._id }}/view">{{ person.name }}</a></td>
+				<td>{{ person.phone }}</td>
+				<td>{{ person.address }}</td>
+				<td>{{ person.email }}</td>
+				<td>
+					<div class="button-group">
+	                  <a ng-href="/#/contact/{{ person._id }}/edit" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span></a>
+	                  <a ng-href="/#/contact/{{ person._id }}/delete" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span></a>
+	                </div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
